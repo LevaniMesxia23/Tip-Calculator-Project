@@ -146,9 +146,8 @@ input:focus{
   border-radius: 5px;
   cursor: pointer;
 }
-.perc:hover{
-  border-radius: 5px;
-  background: #9FE8DF;
+.perc-color{
+  background-color: #26C2AE;
 }
 .custom-perc{
   text-align: right;

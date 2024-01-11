@@ -7,6 +7,7 @@ const total = document.querySelector(".tot")
 const reset = document.querySelector(".button")
 const redline1 = document.querySelector(".redline1")
 const redline2 = document.querySelector(".redline2")
+const percentColor = document.querySelector("perc-color")
 
 
 let billValue = 0;
@@ -30,13 +31,20 @@ people.addEventListener("input", () => {
 })
 
 for(let i = 0; i < percent.length; i++){
-  percent[i].addEventListener("click", () =>{
-    tipPerc = parseInt(percent[i].textContent)
-    calculate()
+   percent[i].addEventListener("click", () =>{
+    for(let j = 0; j < percent.length; j++){
+      percent[j].classList.remove("perc-color")
+    }
+   tipPerc = parseInt(percent[i].textContent)
+   percent[i].classList.add("perc-color")
+   calculate()
   })
 }
 
 reset.addEventListener("click", () => {
+  for(let j = 0; j < percent.length; j++){
+    percent[j].classList.remove("perc-color")
+  }
   bill.value = ""
   billValue = 0
   tip.value = ""
@@ -80,9 +88,6 @@ function calculate(){
     total.textContent = `$0.00`;
   }
 }
-
-console.log(parseInt(''))
-console.log(isNaN(tipPerc))
 
 
 
